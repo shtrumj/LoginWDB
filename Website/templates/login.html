@@ -1,0 +1,31 @@
+{%  extends 'base.html' %}
+
+{% block title %}Login{%  endblock %}
+{% block css %}
+<link href="../static/login.css" rel="stylesheet">
+{%  endblock css %}
+{% block content %}
+    <div class="container">
+        <div class="logo">Yehonathan Login Screen</div>
+        <div class="login-item">
+<form method="POST" action="#" class="form form-login">
+            <div class="form-field">
+    {{  form.csrf_token }}
+    {{ form.username.label(class_="user") }} {{ form.username(size=20, class_="user") }}<span class="hidden">Username</span>
+            </div>
+    <div class="form-field">
+    {{ form.password.label(class_="lock") }} {{ form.password(size=20, class_="lock") }}
+            </div>
+    <h6> I have no user <a href="{{ url_for('auth.register')}}"> Sign Here</a></h6>
+
+
+
+<div class="form-field">
+    <input type="submit" value="Log in">
+</div>
+
+</form>
+
+    </div>
+{%  endblock content %}
+<!--{{ form.email.label }} {{ form.email(size=20, class="form-control") }}-->

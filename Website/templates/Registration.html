@@ -1,0 +1,34 @@
+
+<!--  https://codepen.io/tezjnr/pen/wWvVVB -->
+{%  extends 'base.html' %}
+{% block title %}Register{%  endblock %}
+{% block css %}
+<link href="../static/login.css" rel="stylesheet">
+{%  endblock css %}
+{% block content %}
+    <div class="container">
+        <div class="logo">Yehonathan Registration Screen</div>
+        {{  form.csrf_token }}
+         <div class="login-item">
+            <form method="POST" action="" class="form form-login">
+                <div class="form-field">
+                       {{ form.username.label(class_="user") }} {{ form.username(size=20, class_="form-input") }}<span class="hidden">Username</span>
+                </div>
+                 <div class="form-field">
+                   {{ form.password.label(class_="lock") }} {{ form.password(size=20, class_="form-input") }}<span class="hidden">Password</span>
+                 </div>
+                 <div class="form-field">
+                   {{ form.password2.label(class_="lock") }} {{ form.password2(size=20, class_="form-input") }}<span class="hidden">Repeat Password</span>
+                 </div>
+                 <div class="form-field">
+                    {{ form.email.label(class_="email") }} {{ form.email(size=20, class_="form-input") }}<span class="hidden">Email"</span>
+                 </div>
+                <div class="form-field">
+                     <input type="submit" value="Log in">
+                </div>
+            </form>
+         </div>
+    </div>
+
+{%  endblock content %}
+<!--{{ form.email.label }} {{ form.email(size=20, class="form-control") }}-->
