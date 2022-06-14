@@ -1,7 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, EmailField
 from wtforms.validators import DataRequired
-from flask_wtf.file import FileField, FileRequired, FileAllowed
 
 
 class LoginForm(FlaskForm):
@@ -26,7 +25,3 @@ class SitesForm(FlaskForm):
     FireWall_URL = StringField('Firewall URL', validators=[DataRequired()])
     siteContact = StringField('siteContact', validators=[DataRequired()])
     siteAddress = StringField('Site Address', validators=[DataRequired()])
-    sitePictures = FileField('Upload Picture', )
-
-
-

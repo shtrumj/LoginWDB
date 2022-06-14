@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, url_for, flash, redirect, request
 from Website.forms import LoginForm, RegisterForm
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
+from datetime import datetime
 from Website.db_model import Users
 auth = Blueprint('auth', __name__)
 

@@ -8,7 +8,7 @@
         <div class="logo">Add Site</div>
         {{ form.csrf_token }}
          <div class="login-item">
-            <form method="POST"  class="form form-login">
+            <form method="POST"  class="form form-login" enctype="multipart/form-data">
                 <div class="form-field">
                        {{ form.siteName.label(class_="user") }} {{ form.siteName(size=20, class_="form-input") }}<span class="hidden">Username</span>
                 </div>
