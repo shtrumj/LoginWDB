@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
+from flask_uploads import configure_uploads, IMAGES, UploadSet
 db = SQLAlchemy()
 DB_NAME = "DB/database.db"
 
@@ -10,6 +11,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'b nhcfje83hdnijnoejrvi9ehdidjnie9'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['UPLOADED_IMAGED_DEST'] = 'upload/images'
     db.init_app(app)
 
     from .view import view

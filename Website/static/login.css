@@ -87,6 +87,7 @@ input {
   padding: 1rem;
   /*color: #3A3F44;*/
   color: white;
+
 }
 
 .form-login label   {
@@ -144,5 +145,8 @@ input {
 }
 
 .text--center {
+  text-align: center;
+}
+.user, .lock{
   text-align: center;
 }
