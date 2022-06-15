@@ -35,7 +35,9 @@ class Sites(db.Model):
     FireWall_URL = db.Column(db.String(80), nullable=False)
     siteContact = db.Column(db.String(80), nullable=False)
     siteAddress = db.Column(db.String(80), nullable=False)
-    #sitePictures = FileField('Image', validators=[FileAllowed(['jpg', 'png'], 'Images only!')])
+    internalDomain = db.Column(db.String(20))
+    ExternalDomain = db.Column(db.String(20))
+    ExternalIPAddress = db.Column(db.String(30))
 
     def __init__(self, siteName, siteAdmin, OWA_URL, FireWall_URL, siteContact, siteAddress):
         self.siteName = siteName
@@ -44,5 +46,8 @@ class Sites(db.Model):
         self.FireWall_URL = FireWall_URL
         self.siteContact = siteContact
         self.siteAddress = siteAddress
+        self.internalDomain = internalDomain
+        self.ExternalDomain = ExternalDomain
+        self.ExternalIPAddress = ExternalIPAddress
 
 

@@ -25,3 +25,6 @@ class SitesForm(FlaskForm):
     FireWall_URL = StringField('Firewall URL', validators=[DataRequired()])
     siteContact = StringField('siteContact', validators=[DataRequired()])
     siteAddress = StringField('Site Address', validators=[DataRequired()])
+    internalDomain = StringField('internal domain')
+    ExternalDomain = StringField('External Domain')
+    ExternalIPAddress = StringField('ExternalIPAddress')
