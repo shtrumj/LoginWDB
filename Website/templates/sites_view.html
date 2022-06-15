@@ -1,9 +1,29 @@
 {%  extends 'base.html' %}
+{%  block css %}
+<link href="../static/siteview.css" rel="stylesheet">
+{%  endblock css %}
 
 {% block title %}SitesView{%  endblock %}
-{% block css %}
-<link href="../static/login.css" rel="stylesheet">
-{%  endblock css %}
 {% block content %}
-<h1>This is Sites Vew</h1>
+    <table>
+        <thead>
+    <tr>
+        <th>Site Name</th>
+        <th>SysAdmin Name</th>
+        <th>OWA Address</th>
+        <th>Firewall Address</th>
+    </tr>
+</thead>
+<tbody>
+
+    {%  for obj in objects %}
+        <tr>
+            <td>{{ obj[1] }}</td>
+            <td>{{ obj[2] }}</td>
+            <td>{{ obj[3] }}</td>
+            <td>{{ obj[4] }}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+    </table>
 {% endblock %}

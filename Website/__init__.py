@@ -2,7 +2,6 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 
-from flask_uploads import configure_uploads, IMAGES, UploadSet
 db = SQLAlchemy()
 DB_NAME = "DB/database.db"
 UPLOAD_FOLDER = 'static/uploads/'
@@ -21,8 +20,11 @@ def create_app():
 
     from .view import view
     from .auth import auth
+    from .viewer import viewer
 
     app.register_blueprint(view, url_prefix='/', template_folder='templates')
+    app.register_blueprint(viewer, url_prefix='/', template_folder='templates')
+
     app.register_blueprint(auth, url_prefix='/', template_folder='templates')
     from Website.db_model import Users
     create_db(app)

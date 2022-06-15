@@ -1,18 +1,12 @@
 from flask import Blueprint, render_template, request, flash,redirect
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import select
 from Website.forms import SitesForm
 from Website.db_model import Sites
-from wtforms import Form, DateTimeField
-from flask_uploads import configure_uploads, IMAGES, UploadSet
-from werkzeug.utils import secure_filename
 from Website import db
-from datetime import datetime
+
 
 view = Blueprint('views', __name__)
-
-
-@view.route('/sitesview', methods=['GET', 'POST'])
-def siteview():
-    return render_template('sites_view.html')
 
 
 @view.route('/addsite', methods=['GET', 'POST'])
