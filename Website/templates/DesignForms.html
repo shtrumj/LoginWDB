@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Add a Site{%  endblock %}
+{% block css %}
+<link href="../static/login.css" rel="stylesheet">
+{%  endblock css %}
+{% block content %}
+    <div class="container">
+        <div class="logo">Add Site</div>
+        {{ form.csrf_token }}
+         <div class="login-item">
+            <form method="POST"  class="form form-login" enctype="multipart/form-data">
+                <div class="form-field">
+                       {{ form.siteName.label(class_="user") }} {{ form.siteName(size=20, class_="form-input") }}<span class="hidden">Username</span>
+                </div>
+                 <div class="form-field">
+                   {{ form.siteAdmin.label(class_="lock") }} {{ form.siteAdmin(size=20, class_="form-input") }}<span class="hidden">Password</span>
+                 </div>
+                 <div class="form-field">
+                   {{ form.OWA_URL.label(class_="lock") }} {{ form.OWA_URL(size=20, class_="form-input") }}<span class="hidden">Repeat Password</span>
+                 </div>
+                 <div class="form-field">
+                    {{ form.FireWall_URL.label(class_="email") }} {{ form.FireWall_URL(size=20, class_="form-input") }}<span class="hidden">Email"</span>
+                 </div>
+                  <div class="form-field">
+                    {{ form.siteContact.label(class_="email") }} {{ form.siteContact(size=20, class_="form-input") }}<span class="hidden">Email"</span>
+                 </div>
+
+                  <div class="form-field">
+                    {{ form.siteAddress.label(class_="email") }} {{ form.siteAddress(size=20, class_="form-input") }}<span class="hidden">Email"</span>
+                 </div>
+                <div class="form-field">
+                    {{ form.internalDomain.label(class_="email") }} {{ form.internalDomain(size=20, class_="form-input") }}<span class="hidden">Email"</span>
+                </div>
+                <div class="form-field">
+                    {{ form.ExternalDomain.label(class_="email") }} {{ form.ExternalDomain(size=20, class_="form-input") }}<span class="hidden">Email"</span>
+                </div>
+                <div class="form-field">
+                    {{ form.ExternalIPAddress.label(class_="email") }} {{ form.ExternalIPAddress(size=20, class_="form-input") }}<span class="hidden">Email"</span>
+                </div>
+
+                <div class="form-field">
+                     <input type="submit" value="Add Site">
+                </div>
+            </form>
+         </div>
+    </div>
+
+{%  endblock content %}
