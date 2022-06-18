@@ -39,7 +39,7 @@ class Sites(db.Model):
     ExternalDomain = db.Column(db.String(20))
     ExternalIPAddress = db.Column(db.String(30))
 
-    def __init__(self, siteName, siteAdmin, OWA_URL, FireWall_URL, siteContact, siteAddress):
+    def __init__(self, siteName, siteAdmin, OWA_URL, FireWall_URL, siteContact, siteAddress, internalDomain, ExternalDomain, ExternalIPAddress):
         self.siteName = siteName
         self.siteAdmin = siteAdmin
         self.OWA_URL = OWA_URL

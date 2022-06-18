@@ -1,6 +1,46 @@
- td {
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css');
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+#site td {
         width: 150px;
         text-align: center;
         border: 1px solid black;
         padding: 5px;
  }
+ body{
+     display: flex;
+     min-height: 20%;
+    font-family: 'lato', sans-serif;
+    color: #fff;
+    background: #222222;
+    background: #16222A; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #16222A , #3A6073); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #16222A , #3A6073); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ }
+
+body{
+    justify-content: center;
+}
+
+html {
+   height: 100%;
+}
+tr:hover {background-color: rgba(255, 255, 255, 0.8);}
+#site td, #site th {
+    border: 5px solid #04AA6D;
+    padding: 18px;
+}
+#site th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+#site td{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    font-weight: bold;
+    background-color: rgba(255,255,255 ,0.6);
+    border: 5px solid #04AA6D;
+}

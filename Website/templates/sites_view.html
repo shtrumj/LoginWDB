@@ -5,7 +5,7 @@
 
 {% block title %}SitesView{%  endblock %}
 {% block content %}
-    <table>
+    <table id="site">
         <thead>
     <tr>
         <th>Site Name</th>
@@ -14,6 +14,9 @@
         <th>Firewall Address</th>
         <th>Contact Phone</th>
         <th>Address</th>
+        <th>Internal Domain</th>
+        <th>External Domain</th>
+        <th>External Hosts(Scanning)</th>
     </tr>
 </thead>
 <tbody>
@@ -26,6 +29,9 @@
             <td>{{ obj[4] }}</td>
             <td>{{ obj[5] }}</td>
             <td>{{ obj[6] }}</td>
+            <td>{{ obj[7] }}</td>
+            <td>{{ obj[8] }}</td>
+            <td>{{ obj[9] }}</td>
         </tr>
     {% endfor %}
 </tbody>
