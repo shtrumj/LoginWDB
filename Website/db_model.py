@@ -51,3 +51,12 @@ class Sites(db.Model):
         self.ExternalIPAddress = ExternalIPAddress
 
 
+class sysadmin(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    firstname = db.Column(db.String(20), nullable=False)
+    lastName = db.Column(db.String(20), nullable=False)
+    dateOfBirth = db.Column(db.String(20))
+    phoneNumber = db.Column(db.String(20))
+
+    def __init__(self, **kwargs):
+        super(sysadmin, self).__init__(**kwargs)

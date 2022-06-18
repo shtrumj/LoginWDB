@@ -1,6 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, EmailField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, EmailField, DateField
 from wtforms.validators import DataRequired
+from wtforms_alchemy import PhoneNumberField
+
+
 
 
 class LoginForm(FlaskForm):
@@ -28,3 +31,10 @@ class SitesForm(FlaskForm):
     internalDomain = StringField('internal domain')
     ExternalDomain = StringField('External Domain')
     ExternalIPAddress = StringField('ExternalIPAddress')
+
+
+class sysadmin(FlaskForm):
+    firstname = StringField('First  Name', validators=[DataRequired()], render_kw={'autofocus': True})
+    lastName = StringField('Last name', validators=[DataRequired()])
+    dateOfBirth = DateField('Date Of Birth', format='%d-%m-%Y', validators=[DataRequired()])
+    phoneNumber = phoneNumber = StringField('phoneNumber', validators=[DataRequired()])

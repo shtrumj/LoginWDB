@@ -1,0 +1,30 @@
+{%  extends 'base.html' %}
+{%  block css %}
+<link href="../static/siteview.css" rel="stylesheet">
+{%  endblock css %}
+
+{% block title %}AddSysAdmin{%  endblock %}
+{% block content %}
+    <div class="container">
+        <div class="logo-item">
+             {{ form.csrf_token }}
+            <form method="POST"  class="form form-login" enctype="multipart/form-data">
+              <div class="form-field">
+                       {{ form.firstname.label(class_="user") }} {{ form.firstname(size=20, class_="form-input", autocomplete="off") }}<span class="hidden">Admin first Name</span>
+              </div>
+                <div class="form-field">
+                       {{ form.lastName.label(class_="user") }} {{ form.lastName(size=20, class_="form-input", autocomplete="off") }}<span class="hidden">Admin Last Name</span>
+              </div>
+                <div class="form-field">
+                   {{ form.dateOfBirth.label(class_="lock") }} {{ form.dateOfBirth(class='datepicker') }} {{ form.hidden_tag() }}
+                 </div>
+                <div class="form-field">
+                   {{ form.phoneNumber.label(class_="lock") }} {{ form.phoneNumber(size=20, class_="form-input", autocomplete="off") }}<span class="hidden">Phone Number</span>
+                 </div>
+                <div class="form-field">
+                     <input type="submit" value="Add Site">
+                </div>
+            </form>
+         </div>
+    </div>
+{% endblock %}
